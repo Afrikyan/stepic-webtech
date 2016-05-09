@@ -1,6 +1,6 @@
 import urlparse
 
-def wsgi_hello(environ, start_response):
+def application(environ, start_response):
     status = '200 OK'
     headers = [
         ('Content-Type', 'text/plain')
@@ -8,6 +8,6 @@ def wsgi_hello(environ, start_response):
     parameters = urlparse.parse_qsl(environ.get("QUERY_STRING"))
     body = ["{}={}".format(par, val) for (par, val) in parameters]
     body = "\r\n".join(body)
-    start_response(status, response_headers)
+    start_response(status, headers)
     return [body]
     
