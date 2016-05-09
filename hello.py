@@ -1,6 +1,6 @@
 import urllib.parse as urlparse
 
-def application(environ, start_response):
+def wsgi_hello(environ, start_response):
     status = '200 OK'
     headers = [
         ('Content-Type', 'text/plain')
