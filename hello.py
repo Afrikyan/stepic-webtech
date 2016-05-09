@@ -8,5 +8,6 @@ def wsgi_hello(environ, start_response):
     parameters = urlparse.parse_qsl(environ.get("QUERY_STRING"))
     body = ["{}={}".format(par, val) for (par, val) in parameters]
     body = "\r\n".join(body)
+    start_response(status, response_headers)
     return [body]
     
