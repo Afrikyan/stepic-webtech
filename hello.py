@@ -1,4 +1,5 @@
-import urllib.parse as urlparse
+#import urllib.parse as urlparse
+import urlparse
 
 def wsgi_hello(environ, start_response):
     status = '200 OK'
